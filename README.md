@@ -7,16 +7,27 @@
 4. **Component Hierarchy:** ![Project two hierarchy](https://user-images.githubusercontent.com/89764557/134079359-a575a8e6-c10d-4085-9642-482fbcc094db.jpeg)
 
 5. **API:** 
-```{
+```
+{
     "records": [
         {
             "id": "recbASOspF6GZh0sj",
-            "fields": {},
+            "fields": {
+                "detail": "this is my blog for the day",
+                "comments": "this is a comment section",
+                "title": "Post of the day.",
+                "username": "Daquan"
+            },
             "createdTime": "2021-09-20T16:13:58.000Z"
         },
         {
             "id": "rec0vcNZ1cgfVbfYg",
-            "fields": {},
+            "fields": {
+                "username": "Marie",
+                "title": "Love travel",
+                "detail": "Traveling is my passion",
+                "comments": "this blog is amazing"
+            },
             "createdTime": "2021-09-20T16:13:58.000Z"
         },
         {
@@ -27,6 +38,7 @@
     ],
     "offset": "rec5nFP5p93nTiq8N"
 }
+
 ```
 
 6. **MVP:** This project should allow client to view content, click to display content, add a comment to content, like or dislike content and post content.
