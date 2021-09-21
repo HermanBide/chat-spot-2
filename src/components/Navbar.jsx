@@ -32,14 +32,14 @@ function Navbar() {
                 {/* front and back arrows*/}
                 <span> my spot</span><br/>
 
-                <div className="search-box">
-                    <input type="" id="" placeholder=""/>
+                {/* <div className="search-box"> */}
+                    {/* <input type="" id="" placeholder=""/> */}
                     {/* <i class="fa fa-search" aria-hidden="true"></i> */}
                     {/* <ion-icon ClassName="search"></ion-icon>
                     <IoIosApps/> */}
                     {/* <SearchIcon></SearchIcon> */}
                     {/* <button type="">search</button>  */}
-                </div>
+                {/* </div> */}
 
                 <div className={`menu-container {${menuActive} && 'active}`}> 
                     <ul>

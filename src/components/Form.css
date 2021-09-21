@@ -1,47 +1,37 @@
-*{
+/* *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
+} */
+
+.form-box {
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    width: 500px;
 }
 
-.body {
-    display: flex;
-    background-color:#ffffff;
-    height: 100vh;
-    justify-content: center;
-    align-items: center;
-    font-family: 'poppins', sans-serif;
+.form-box h2 {
+    font-size: 20px;
+    margin-bottom:  15px;
 }
 
-.form-container {
-    background-color: #ffffff;
-    width: 600px;
-  
-    
+.form-box input {
+    width: 100%;
+    height: 50px;
+    padding: 0 20px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #86b0b6;
 }
 
-.group {
-    margin-bottom: 30px;
+.form-box input:focus {
+    border: 1px solid #000000;
+    outline: 0;
 }
 
-.group:focus-within {
-    transform: scale(1.1,1.1);
-}
-
-.form-label {
-    font-size: .75em;
-    color: #555;
-    display: block;
-    opacity: 0;
-    transition: all .3s;
-    transform: translateX(-50px);
-}
-
-.focused > .form-label{
-    opacity:1;
-    transform: translateX(0);
-}
 
 .form-control {
     background: #e5e5e5;
@@ -54,13 +44,7 @@
 
     transition: all .6s;
 }
-/* .form-control:valid {
-    border-color: #fca311;
-    }
 
-.form-control:invalid:focus {
-border-color: red;
-} */
 
 
 .form-control::placeholder {
@@ -75,15 +59,12 @@ border-color: red;
 }
 
 .button {
-    background: 0 0 #ffffff;
-    color: #01497c;
-    border-radius: 3px;
-    border:1px solid #e5e5e5;
-    font-size: 14px;
-    padding:10 50px;
-    text-transform: uppercase;
-
-    /* background: #14213d; */
+    border: 0;
+    padding: 10px 30px;
+    background: #86b0b6;
+    font-size: 18px;
+    border-radius: 5px;
+    color: #e5e5e5;
 }
 
 .button:hover {
@@ -92,7 +73,17 @@ border-color: red;
     background: #01497c;
 }
 
-textarea {
-    resize: none;
+.form-box textarea {
+    width: 100%;
+    height: 150px;
+    padding: 15px 20px;
+    margin-bottom: 10px;
+    border-radius:  5px;
+    border: 1px solid #86b0b6;
+}
+
+.form-box textarea:focus {
+    border: 1px solid #000000;
+    outline: 0;
 }
 

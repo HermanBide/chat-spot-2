@@ -1,50 +1,40 @@
-// import { useState, useEffect} from 'react';
+import axios from 'axios';
 import './Blog.css'
-// import axios from 'axios';
-// import { baseURL, config } from "./services";
-// const apiKey = "zEQ1gCv8jrqPXKuMqbtEpLJxY3fSJNz6";
+import { baseURL, config } from '../services';
+import { Link } from 'react-router-dom'
 
+function Blog(props) {
 
+const { username, title, detail, url, comments } = props.blog.fields;
 
-function Blog() {
+const removeBlog = async () => {
 
-    // const [ toggleFetch, setToggleFetch ] = useState(false);
-    // const [articles, setArticles ] = useState([]);
-    
-    // useEffect(() => {
-    //     const fetchData = async () => {
-    //         const response = await axios.get(baseURL, config)
-    //         setArticles(response.data)
-    //     } 
-    //     fetchData();
-    // },[toggleFetch]);
-
+    const blogURL = `${baseURL}/${props.blog.id}`;
+    await axios.delete(blogURL, config);
+    props.setToggleFetch((curr) => !curr);
+}
     return (
         <body className="blog-container">
-            <main className="header">
-                ads
-            </main>
-            <section className="section">
-            blogs
-                 <div>
-                    
-                </div>
-                <div>
-                    
-                </div>
-                <div>
+        <Link to="/Form"><button>Write a blog</button></Link>
+            <div className="blog-card">
+           
+                <div className="card-text">
+                    <h4>{username}</h4>
                 
+                    <h2>{title}</h2>
+                    <p>{detail}</p>
+                    <a href={url}> </a>
                 </div>
+                    <button onClick={removeBlog}>Remove Blog</button>
+                    <Link to={`/edit/${props.blog.id}`}><button>edit blog</button></Link>
+            </div>
 
-            </section>
-            
-            <aside className="aside">
-                category
-            </aside>
+            <form>
+            <div className="icon-comments">
+                <p>{comments}</p>
+            </div>
+           </form>
 
-            <footer className="footer">
-                footer
-            </footer>
         </body>
     )
 }
