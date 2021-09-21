@@ -42,7 +42,7 @@
 ```
 
 6. **MVP:** This project should allow client to view content, click to display content, add a comment to content, like or dislike content and post content.
-7. **Post-MVP:**)User should be able to comment and edit their comment and create and edit blog form
+7. **Post-MVP:**)User should be able to comments and edit their comment and create and edit blog form
 8. **Timeframes:**
 
 | Task             | Priority | Estimated Time | Time Invested | Actual Time |
