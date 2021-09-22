@@ -102,6 +102,9 @@ background: orange;
   background: #ffffff;
   box-shadow: 5px 5px 15px rgba(0,0,0,0.9);
   text-align: center;
+
+  transition: 0.6s ease;
+  cursor: pointer;
 }
 
 .card-image {
@@ -119,6 +122,7 @@ background: orange;
   /*BLOG */
 .blog-section {
   background-color: palegreen;
+ 
 }
 
   /*FOOTER */
@@ -134,17 +138,18 @@ background: orange;
 
 
 
-  @media screen and (max-width: 580px) {
+  @media screen and (max-width: 425px) {
   
   
     .navbar {
       align-items: center;
+      flex-direction: column;
     }
   
     .menu-container {
       width: 300px;
       height: calc(100% - 65px);
-      background:#ffffff;
+      /* background:#ffffff; */
       position: absolute;
       top: 55px;
       left: -300px;

@@ -34,12 +34,12 @@ function Form(props) {
           detail,
         }
         // make a POST request to our endpoint (same as GET), pass our newCharacter as the data, and pass our config to allow ourselves entry into the database
-        if (params.id) {
-          const blogURL = `${baseURL}/${params.id}`;
-          await axios.put(blogURL, { fields: newBlog }, config);
-        } else {
+        // if (params.id) {
+        //   const blogURL = `${baseURL}/${params.id}`;
+        //   await axios.put(blogURL, { fields: newBlog }, config);
+        // } else {
           await axios.post(baseURL, { fields: newBlog }, config);
-        }
+        
         // trigger our useEffect
         props.setToggleFetch((curr) => !curr);
         history.push("/")

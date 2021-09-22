@@ -1,14 +1,31 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 // import { SearchIcon } from '@mui/icons-material/Search';
 // import {IoIosApps} from 'react-icons/fa'
+import MenuIcon from '@mui/icons-material/Menu';
 
 
 
 function Navbar() {
 
     const [menuActive, setMenuActive ] = useState(false)
+    const [menuToggle, setMenuToggle ] = useState(false)
+
+    useEffect(() => {
+        const handleResize = () => {
+            if(window.innerWidth > 425) {
+                setMenuActive(true);
+                setMenuToggle(false)
+            } else {
+                setMenuActive(false)
+            }
+        }
+        window.addEventListener("resize", handleResize);
+        return()=> {
+        window.removeEventListener("resize", handleResize);
+        }
+    }, [])
 
     const navLinks = [
         {
@@ -27,19 +44,13 @@ function Navbar() {
     ]
     return (
         <div>
-            <nav className="navbar">
 
+               
+                 <MenuIcon className="menu-icon" onClick={() => setMenuToggle(!menuToggle)}/>
+
+            <nav className="navbar" style={{ display: menuActive || menuToggle ? "flex" : "none"}}>
                 {/* front and back arrows*/}
                 <span> my spot</span><br/>
-
-                {/* <div className="search-box"> */}
-                    {/* <input type="" id="" placeholder=""/> */}
-                    {/* <i class="fa fa-search" aria-hidden="true"></i> */}
-                    {/* <ion-icon ClassName="search"></ion-icon>
-                    <IoIosApps/> */}
-                    {/* <SearchIcon></SearchIcon> */}
-                    {/* <button type="">search</button>  */}
-                {/* </div> */}
 
                 <div className={`menu-container {${menuActive} && 'active}`}> 
                     <ul>
@@ -51,7 +62,8 @@ function Navbar() {
                     </ul>
                 </div>
 
-                <ion-icon className="menu-container" onClick={() => setMenuActive(!menuActive)}>X</ion-icon>
+              
+               
 
             </nav>            
         </div>

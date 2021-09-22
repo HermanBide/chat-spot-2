@@ -24,7 +24,18 @@
     background-color: blue;
 } */
 
+.blog-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr ;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 10px;
+    width: 300px;
+    justify-content: center;
+    
+}
+
 .blog-card {
+    margin-top: 30px;
     display: grid;
     grid-template-columns: 300px;
     grid-template-rows: 210px 210 80px;
@@ -35,6 +46,9 @@
     background: #ffffff;
     box-shadow: 5px 5px 15px rgba(0,0,0,0.9);
     text-align: center;
+
+    transition: 0.6s ease;
+    cursor: pointer;
   }
 
   .card-text {
@@ -48,7 +62,7 @@
   }
 
   .card-text h4 {
-    color: dodgerblue;
+    color: #01497c;
     font-size: 22px;
   }
 
@@ -56,4 +70,38 @@
     color: grey;
     font-size: 14px;
     font-weight: 300;
+  }
+
+  .card-stats {
+      grid-area:stats;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr ;
+      grid-template-rows: 1fr;
+      border-bottom-left-radius: 15px;
+      border-bottom-right-radius: 15px;
+      background: #01497c;
+  }
+
+  .card-stats .stat {
+      display: grid;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      padding: 10px;
+      color: white;
+  }
+
+  .card-stats .type {
+      font-size: 11px;
+      font-weight: 200;
+  }
+
+  .card-stats .border {
+      border-left: 1px solid orange;
+      border-right: 1px solid orange;
+  }
+
+  .card:hover {
+      transform: scale(1.2);
+      box-shadow: 5px 5px 5px rgba(0,0,0,0);
   }

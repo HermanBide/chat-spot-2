@@ -3,9 +3,10 @@ import { useState, useEffect } from 'react'
 import {config, baseURL } from "./services";
 import './App.css';
 import Navbar from './components/Navbar';
-import {  Route } from 'react-router-dom'
+import {  Link, Route } from 'react-router-dom'
 import Form from './components/Form';
 import Blog from './components/Blog';
+import BlogPage from './components/BlogPage';
 import Advices from './components/Advices';
 import CommentBox from './components/CommentBox'
 
@@ -58,7 +59,7 @@ function App() {
         <section className="blog-section">
           <div className="blog-container">
           { blogs.map((blog) => (
-            <Blog key={blog.id} blog={blog} setToggleFetch={setToggleFetch} />
+            <Link to={`/Blog/${blog.id}`}><Blog key={blog.id} blog={blog} setToggleFetch={setToggleFetch} /></Link>
           ))}
           
           </div>
@@ -71,8 +72,8 @@ function App() {
         </footer>
         </Route>
 
-        <Route path="/Blog">
-          <Blog />
+        <Route path="/Blog/:id">
+          <BlogPage blogs={blogs} setToggleFetch={setToggleFetch}/>
         </Route>
 
         <Route path="/Advices">
@@ -93,7 +94,7 @@ function App() {
         </Route>
 
         <Route path="/CommentBox">
-          <CommentBox />
+          <CommentBox  setToggleFetch={setToggleFetch}/>
         </Route>
   
     </div>
