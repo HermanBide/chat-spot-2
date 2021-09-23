@@ -40,20 +40,28 @@ function App() {
         <Route exact path="/">
         <header className="header">
           <div className="article-container">
+
             <div className="article-card">
               <div className="card-image">
               
               </div>
               <div className="card-text">
-              
+                <h3>username</h3>
+                <h1>title</h1>
+                <p>Detail</p>
               </div>
+
               <div className="card-stats">
-              
+                <h4>like button</h4>
+                <button></button>
+              </div>
+              <div>
+                <p>comment list</p>
               </div>
                 <span></span>
-                <h1>title</h1>
+            
             </div>
-            article
+            
           </div>
         </header>
 

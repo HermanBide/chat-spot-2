@@ -6,6 +6,7 @@ import axios from 'axios'
 import ThumbUpIcon from '@mui/icons-material/ThumbUp';
 // import ThumbDownAltIcon from '@mui/icons-material/ThumbDownAlt'
 import CommentIcon from '@mui/icons-material/Comment';
+import Comment from './Comment';
 
 
 
@@ -69,6 +70,7 @@ const removeBlog = async () => {
                         <h4>Comment!</h4>
                         <Link to="/CommentBox"><CommentIcon /></Link> 
                     <div className="icon-comments">
+                        <Comment />
                         <p>{comments}</p>
                     </div>
                     </div>
