@@ -7,7 +7,7 @@ import { baseURL, config } from "../services"
 
 function CommentBox(props) {
 
-    const [ username, setUsername ] = useState("");
+    // const [ username, setUsername ] = useState("");
     const [ comment, setComment ] = useState("");
     const params = useParams();
     const history = useHistory();
@@ -17,7 +17,7 @@ function CommentBox(props) {
         if(params.id) {
             const blog = props.blogs.find((blog) => blog.id === params.id);
             if(blog) {
-                setUsername(blog.field.username === params.id)
+                // setUsername(blog.field.username === params.id)
                 setComment(blog.field.comments === params.id)
             }
         }
@@ -33,7 +33,7 @@ function CommentBox(props) {
         e.preventDefault();
         // create a new object called newCharacter (holding all our data from state)
         const newBlog = {
-            username,
+            // username,
           comment,
         }
         // make a POST request to our endpoint (same as GET), pass our newCharacter as the data, and pass our config to allow ourselves entry into the database
@@ -58,12 +58,12 @@ function CommentBox(props) {
                 <h2>Comment</h2>
                 <form action="" onSubmit={handleSubmit}>
                         {/* <label for="message" className="comment-label">Comment</label>  */}
-                        <input className="form-control" id="username" type="text" value={username} autoComplete="off"
+                        {/* <input className="form-control" id="username" type="text" value={username} autoComplete="off"
                             placeholder="username"
                             required
                             tabIndex="1"
                             onChange={(e) => setUsername(e.target.value)}
-                            />
+                            /> */}
                         <textarea 
                             className="comment-control"  
                             id="text" 

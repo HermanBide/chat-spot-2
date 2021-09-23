@@ -1,15 +1,24 @@
 import React from 'react'
 // import { useState, useEffect} from 'react';
-import { useParams } from "react-router-dom";
+// import { useParams } from "react-router-dom";
 
 function Comment() {
+    
+//     const { username, comments } = props.comments.fields;
 
-    const { id } = useParams();
+
+    // const { id } = useParams();
 
     return (
         <div>
             <div>
-                    {id}
+             <h4>
+                 {/* {username} */}
+             </h4>
+             <p>
+                 {/* {comments} */}
+             </p>
+                    
             </div>
         </div>
     )

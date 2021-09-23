@@ -60,7 +60,7 @@ const removeBlog = async () => {
                         <p>{detail}</p>
                         <a href={url}> </a>
                     </div>
-                        <button onClick={removeBlog}>Remove Blog</button>
+                        <button className="remove-button" onClick={removeBlog}>Remove Blog</button>
                         {/* <Link to={`/edit/${props.blog.id}`}><button>edit blog</button></Link> */}
 
                     <div className="card-stats">

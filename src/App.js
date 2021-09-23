@@ -9,7 +9,7 @@ import Blog from './components/Blog';
 import BlogPage from './components/BlogPage';
 import Advices from './components/Advices';
 import CommentBox from './components/CommentBox'
-import Comment from './components/Comment'
+import CommentList from './components/CommentList'
 
 
 
@@ -105,8 +105,9 @@ function App() {
         <Route path="/CommentBox/">
           <CommentBox  setToggleFetch={setToggleFetch}/>
         </Route>
-        <Route path="/BlogPage/:id">
-          <Comment  setToggleFetch={setToggleFetch}/>
+
+        <Route path="/Comment/:id">
+          <CommentList  setToggleFetch={setToggleFetch}/>
         </Route>
   
     </div>
