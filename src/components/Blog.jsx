@@ -66,8 +66,6 @@ const removeBlog = async () => {
                         <div className="stat">
 
                        <ThumbUpIcon onClick={increment}/><h4>{count}</h4>
-{/* 
-                        <ThumbDownAltIcon onClick={increment}/><h4>{count}</h4> */}
                         <h4>Comment!</h4>
                         <Link to="/CommentBox"><CommentIcon /></Link> 
                     <div className="icon-comments">

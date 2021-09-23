@@ -9,6 +9,7 @@ import Blog from './components/Blog';
 import BlogPage from './components/BlogPage';
 import Advices from './components/Advices';
 import CommentBox from './components/CommentBox'
+import Comment from './components/Comment'
 
 
 
@@ -93,8 +94,11 @@ function App() {
           />
         </Route>
 
-        <Route path="/CommentBox">
+        <Route path="/CommentBox/">
           <CommentBox  setToggleFetch={setToggleFetch}/>
+        </Route>
+        <Route path="/BlogPage/:id">
+          <Comment  setToggleFetch={setToggleFetch}/>
         </Route>
   
     </div>
@@ -102,3 +106,4 @@ function App() {
 }
 
 export default App;
+

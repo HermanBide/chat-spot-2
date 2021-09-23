@@ -32,6 +32,7 @@ function Form(props) {
           username,
           title,
           detail,
+        
         }
         // make a POST request to our endpoint (same as GET), pass our newCharacter as the data, and pass our config to allow ourselves entry into the database
         // if (params.id) {
@@ -52,6 +53,8 @@ function Form(props) {
         <h2>Write a blog.</h2>
           
             <form action="" onSubmit={handleSubmit}>
+
+                <img src="https://bestlifeonline.com/wp-content/uploads/sites/3/2019/04/sunset-boulevard-strip-hollywood-los-angeles-california.jpg?resize=500,335&quality=82&strip=all" alt="image" />
 
                 <input className="form-control" id="username" type="text" value={username} autoComplete="off"
                 placeholder="username"

@@ -12,6 +12,7 @@ function CommentBox(props) {
     const params = useParams();
     const history = useHistory();
 
+
     useEffect(() => {
         if(params.id) {
             const blog = props.blogs.find((blog) => blog.id === params.id);
@@ -19,7 +20,11 @@ function CommentBox(props) {
                 setComment(blog.field.comments === params.id)
             }
         }
-
+        // const fetchBlog = async () => {
+        //     if(params.id === blog.id) {
+        //         return
+        //     }
+        // }
 
     },[params.id, props.blogs])
 
