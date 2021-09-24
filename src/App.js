@@ -9,7 +9,8 @@ import Blog from './components/Blog';
 import BlogPage from './components/BlogPage';
 import Advices from './components/Advices';
 import CommentBox from './components/CommentBox'
-import CommentList from './components/CommentList'
+
+
 
 
 
@@ -26,12 +27,29 @@ function App() {
         const getBlog = async () => {
           // const nytURL = `https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${term}&api-key=${process.env.REACT_APP_ARTICLE_KEY_API}`;
 
-            const response = await axios.get(baseURL, config)
+            const blogResponse = await axios.get(baseURL+"/blog", config)
+            const commentResponse = await axios.get(`${baseURL}/comments`, config);
             // const res = await axios.get( baseURL, config)
-            setBlogs(response.data.records)
+            const comments = commentResponse.data.records;
+            console.log(comments, "loggin the comments")
+
+            const blogsWithComments = blogResponse.data.records.map((blog) => {
+              return {
+                ...blog,
+                fields: {
+                  ...blog.fields,
+                  comments: blog.fields.comments ? comments.filter((comment) => blog.fields.comments.includes(comment.id))
+                  : []
+                }
+              }
+            })
+            console.log(blogsWithComments, "blog with comment")
+            setBlogs(blogsWithComments)
         } 
         getBlog();
     },[toggleFetch]);
+
+
 
     return (
       <div className="App">
@@ -39,38 +57,37 @@ function App() {
 
         <Route exact path="/">
         <header className="header">
+
           <div className="article-container">
+          <h1>Read, Write, Blog.</h1>
+          <p>Articles & blogs to read. Share your experience and passiosn with the world.Like or comment on something you read.</p>
 
             <div className="article-card">
               <div className="card-image">
-              
               </div>
               <div className="card-text">
                 <h3>username</h3>
                 <h1>title</h1>
                 <p>Detail</p>
               </div>
-
               <div className="card-stats">
                 <h4>like button</h4>
-                <button></button>
-              </div>
-              <div>
-                <p>comment list</p>
-              </div>
+                <button className="article-button">button</button>
                 <span></span>
-            
+              </div>
+              {/* <div className="Comment-list">
+                <p>comment list</p>
+              </div> */}
             </div>
             
           </div>
         </header>
 
         <section className="blog-section">
-          <div className="blog-container">
+          <div className="blog-containers">
           { blogs.map((blog) => (
             <Link to={`/Blog/${blog.id}`}><Blog key={blog.id} blog={blog} setToggleFetch={setToggleFetch} /></Link>
-          ))}
-          
+          ))} 
           </div>
         </section>
 
@@ -89,26 +106,28 @@ function App() {
           <Advices />
         </Route>
 
-        <Route path="/edit/:id">
-          <Form  blogs={blogs}
-            setToggleFetch={setToggleFetch}
-          />
-        </Route>
 
+
+        <Route path="/edit/:id">
+          <Form  blogs={blogs} setToggleFetch={setToggleFetch}/>
+        </Route>
 
         <Route path="/Form">
-          <Form 
-            setToggleFetch={setToggleFetch}
-          />
+          <Form setToggleFetch={setToggleFetch}/>
         </Route>
 
-        <Route path="/CommentBox/">
+
+
+
+        <Route path="/CommentBox/:id">
           <CommentBox  setToggleFetch={setToggleFetch}/>
         </Route>
 
-        <Route path="/Comment/:id">
-          <CommentList  setToggleFetch={setToggleFetch}/>
-        </Route>
+
+{/* 
+        <Route path={`/Blog/${blog.id}`}>
+        <Link to={`/Blog/${blog.id}`}><Comment setToggleFetch={setToggleFetch}/></Link>
+        </Route> */}
   
     </div>
      );

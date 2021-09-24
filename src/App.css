@@ -24,6 +24,8 @@
     justify-content: space-between;
     color: var(--primary-two);
     align-items: center;
+
+    border-bottom:50px solid var(--secondary) ;
   }
   
   ul {
@@ -43,6 +45,10 @@
     font-size: 20px;
     color: #000000;
   }
+
+  .P {
+    min-height: 1;
+  }
   
   /* .search-box {
     color: #fca311;
@@ -60,7 +66,6 @@
     color:var(--neutral);
   }
   
-  
   span {
     font-size: 25px;
     display: flex;
@@ -70,17 +75,12 @@
   
   }
   
-  ion-icon {
-    font-size: 64px;
-  }
-  
   .menu {
     font-size: 36px;
     width: 6px;
     align-items: center;
     cursor: pointer;
     display: none;
-  
   }
 
 
@@ -88,27 +88,41 @@
   /*ARTICLE */
   /*ARTICLE */
 .header {
-background: orange;
+display: grid;
+/* grid-template-columns: ;
+grid-template-rows: ; */
+background: #ffffff;
+padding: 20px;
+
+}
+
+.article-container {
+  border-top: 3px solid #01497c;
 }
 
 .article-card {
   display: grid;
+  max-width: 300px;
+  max-height: 500px;
   grid-template-columns: 300px;
   grid-template-rows: 210px 210 80px;
   grid-template-areas: "image" "text" "stats";
-
   font-family: roboto;
   border-radius: 18px;
   background: #ffffff;
   box-shadow: 5px 5px 15px rgba(0,0,0,0.9);
   text-align: center;
-
+  margin: 5px 20px 10px 60px;
   transition: 0.6s ease;
   cursor: pointer;
 }
 
-.card-image {
+/* .card-image {
 
+} */
+
+.article-button {
+height: 30px;
 }
 
 .card-text {
@@ -117,12 +131,23 @@ background: orange;
 
 .card-state {
   grid-area: stats;
+
 }
   /*BLOG */
   /*BLOG */
 .blog-section {
-  background-color: palegreen;
+  background-color: var(--neutral);
+  display: grid;
  
+}
+
+.blog-containers {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr );
+  justify-content: center;
+  align-items: center; 
+  border-top: 3px solid #01497c;
+
 }
 
   /*FOOTER */

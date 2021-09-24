@@ -1,5 +1,5 @@
 // create our url
-export const baseURL = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/blog`;
+export const baseURL = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}`;
 // make a config object (somewhere to hold our key)
 export const config = {
   headers: {

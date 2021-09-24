@@ -1,0 +1,20 @@
+.container {
+    display: grid;
+}
+
+.card-text {
+    display: grid;
+    margin: 10px 40px ;
+}
+
+.remove-button {
+    justify-content: center;
+    height: 25px;
+    width: 10%;
+}
+
+.btn:hover {
+    border-color: #e5e5e5;
+    color: #e5e5e5;
+    background: #01497c;
+}

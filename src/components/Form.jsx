@@ -39,7 +39,7 @@ function Form(props) {
         //   const blogURL = `${baseURL}/${params.id}`;
         //   await axios.put(blogURL, { fields: newBlog }, config);
         // } else {
-          await axios.post(baseURL, { fields: newBlog }, config);
+          await axios.post(baseURL+"/blog", { fields: newBlog }, config);
         
         // trigger our useEffect
         props.setToggleFetch((curr) => !curr);
@@ -54,7 +54,7 @@ function Form(props) {
           
             <form action="" onSubmit={handleSubmit}>
 
-                <img src="https://bestlifeonline.com/wp-content/uploads/sites/3/2019/04/sunset-boulevard-strip-hollywood-los-angeles-california.jpg?resize=500,335&quality=82&strip=all" alt="image" />
+                {/* <img src="https://bestlifeonline.com/wp-content/uploads/sites/3/2019/04/sunset-boulevard-strip-hollywood-los-angeles-california.jpg?resize=500,335&quality=82&strip=all" alt="image" /> */}
 
                 <input className="form-control" id="username" type="text" value={username} autoComplete="off"
                 placeholder="username"
@@ -88,4 +88,4 @@ function Form(props) {
     )
 }
 
-export default Form
+export default Form;
