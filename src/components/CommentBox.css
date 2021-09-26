@@ -25,12 +25,12 @@
     padding: 0 20px;
     margin-bottom: 15px;
     border-radius: 5px;
-    border: 1px solid #86b0b6;
+    border: 1px solid #01497c;
 
 }
 
 .comment-box input:focus {
-    border: 1px solid #000000;
+    border: 1px solid #fca311;
     outline: 0;
 }
 
@@ -40,11 +40,11 @@
     padding: 15px 20px;
     margin-bottom: 10px;
     border-radius:  5px;
-    border: 1px solid #86b0b6;
+    border: 1px solid #01497c;
 }
 
 .comment-box textarea:focus {
-    border: 1px solid #000000;
+    border: 1px solid #fca311;
     outline: 0;
 }
 
@@ -57,6 +57,19 @@
     color: #e5e5e5;
 }
 
-btn:hover {
+.btn:hover {
     background-color: orange ;
+}
+
+@media screen and (max-width: 425px) {
+
+    .comment-box {
+        width: 225px;
+        padding-right: 40px;
+    }
+
+    .btn {
+        display: flex;
+        /* margin: ; */
+    }
 }

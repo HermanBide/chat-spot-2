@@ -1,9 +1,12 @@
 import React from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, Route } from "react-router-dom";
 import { baseURL, config } from "../services";
 import axios from "axios";
 import "./BlogPage.css";
 import CommentIcon from "@mui/icons-material/Comment";
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import PersonIcon from '@mui/icons-material/Person';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 // import CommentBox from "./CommentBox";
 
 // import Blog from './Blog';
@@ -34,27 +37,32 @@ function BlogPage(props) {
         <button className="btn">Write a blog</button>
       </Link>
       <div className="card-text">
-        <h4>{blog.fields.username}</h4>
+        <h4><AccountCircleIcon className=""icon/>{blog.fields.username}</h4>
         <h2>{blog.fields.title}</h2>
         <p>{blog.fields.detail}</p>
         <a href={blog.fields.url}> </a>
         
         <div className="comment-stat">
           <h4>Comment!</h4>
-      
+       
           {blog.fields.comments.map((comment) => (
+            <div className="comment" >
+              <p><PersonIcon/> {comment.fields.comment}</p>
+              <FavoriteBorderIcon className='heart' style={{color: "red"}} />
+          </div>
 
-              <p>{comment.fields.comment}</p>
           ))}
+   
         </div> 
 
-        <div>
+        <div className="comment-div" >
         <h5>Leave comment</h5>
-        {/* <Link to={`/CommentBox/${props.blog.id}`}>
-            <CommentIcon />
-        </Link> */}
+    
+        {/* <Link to={`/CommentBox/${props.blog.id}`}> */}
+          <Link to="/CommentBox/blog:id">
+            <button className="comment-button"><CommentIcon /></button>
+          </Link>
         </div>
-          
       </div>
    
 

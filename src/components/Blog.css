@@ -1,41 +1,17 @@
-/* body {
-    display: grid;
-    grid-template-columns: repeat(1, 4fr);
-    grid-template-rows: 300px 800px 300px 200px;
-    grid-gap: 10px;
-    margin: 15px;
-}
-
-.header {
-    background-color: orange;
- 
-}
-
-.section {
-    background-color: green;
- 
-}
-
-.aside {
-    background-color: gray;
-}
-
-.footer {
-    background-color: blue;
-} */
 
 .blog-container {
-    margin: 0 0 0 45px ;
+  /* display: grid; */
+    /* padding: px; */
     /* margin: 0 auto; */
+    /* justify-content: center;
+    align-items: center;
+    margin: 3px;
+    width: 100%; */
 }
 
 .blog-card {
     margin-top: 30px;
     display: grid;
-    max-width: 300px;
-    max-height: 500px;
-    /* grid-template-columns: 300px;
-    grid-template-rows: 210px 210 80px; */
     grid-template-areas: "text" "stats";
     font-family: roboto;
     border-radius: 18px;
@@ -44,6 +20,8 @@
     text-align: center;
     transition: 0.6s ease;
     cursor: pointer;
+    /* width: 300px; */
+  
   }
 
   .card-text {
@@ -68,13 +46,14 @@
   }
 
   .card-stats {
-      grid-area:stats;
+      grid-area: "stats" ;
       display: grid;
       grid-template-columns: 1fr 1fr 1fr ;
       grid-template-rows: 1fr;
       border-bottom-left-radius: 15px;
       border-bottom-right-radius: 15px;
       background: #01497c;
+      align-items: baseline;
   }
 
   .card-stats .stat {
@@ -86,17 +65,36 @@
       color: white;
   }
 
-  /* .card-stats .type {
-      font-size: 11px;
-      font-weight: 200;
-  } */
+  .card-stats h4 {
+    margin: 0 auto;
+  }
 
-  /* .card-stats .border {
-      border-left: 1px solid orange;
-      border-right: 1px solid orange;
-  } */
+
 
   .card:hover {
       transform: scale(1.2);
       box-shadow: 5px 5px 5px rgba(0,0,0,0);
   }
+
+  @media screen and (max-width: 425px) { 
+    .blog-container {
+    
+    }
+
+    .blog-card {
+      /* margin-top: 30px; */
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr;
+      grid-template-areas: "text" "stats";
+      font-family: roboto;
+      border-radius: 18px;
+      background: #ffffff;
+      box-shadow: 5px 5px 15px rgba(0,0,0,0.9);
+      text-align: center;
+      transition: 0.6s ease;
+      cursor: pointer;
+      margin: 10px;
+    }
+  }
+

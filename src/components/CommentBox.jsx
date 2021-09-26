@@ -7,6 +7,7 @@ import { baseURL, config } from "../services"
 
 function CommentBox(props) {
 
+
     const [ username, setUsername ] = useState("");
     const [ comment, setComment ] = useState("");
     const params = useParams();
@@ -36,12 +37,13 @@ function CommentBox(props) {
         //   const blogURL = `${baseURL}/${params.id}`;
         //   await axios.put(blogURL, { fields: newBlog }, config);
         // } else {
-          await axios.post(baseURL+"/comments", { fields: newComment }, config);
+            // await axios.get(baseURL+"/blog/", { })
+          await axios.post(baseURL+"/Blog/:id/Comments", { fields: newComment }, config);
         //   await axios.put(`/Blog/${id}`)
         // }
         // trigger our useEffect
         props.setToggleFetch((curr) => !curr);
-        history.push("/Blog")
+        history.push("/BlogPage")
       }
 
 

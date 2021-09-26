@@ -1,8 +1,8 @@
 import { useState } from "react";
 import "./Blog.css";
-import { baseURL, config } from "../services";
+// import { baseURL, config } from "../services";
 import { Link } from "react-router-dom";
-import axios from "axios";
+// import axios from "axios";
 import ThumbUpIcon from "@mui/icons-material/ThumbUp";
 // import ThumbDownAltIcon from '@mui/icons-material/ThumbDownAlt'
 import CommentIcon from "@mui/icons-material/Comment";
@@ -36,25 +36,25 @@ function Blog(props) {
 //     props.setToggleFetch((curr) => !curr);
 //   };
   return (
-    <body className="blog-container">
+    <body>
       <div className="blog-card">
         <div className="card-text">
           <h4>{username}</h4>
           <h2>{title}</h2>
           <p className="p">{detail}</p>
-          {/* <a href={url}> </a> */}
+          <button className="read-more">Read More</button>
         </div>
 
         <div className="card-stats">
             <div className="stat">
-                <ThumbUpIcon onClick={increment} />
+                <ThumbUpIcon className="icon" onClick={increment} />
                 <h4>{count}</h4>
             </div>
 
             <div className="stat">
             <h4>Comment!</h4>
             <Link to={`/CommentBox/${props.blog.id}`}>
-              <CommentIcon />
+              <CommentIcon className="icon"/>
             </Link>
             </div>
 

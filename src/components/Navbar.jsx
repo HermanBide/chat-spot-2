@@ -34,8 +34,8 @@ function Navbar() {
 
         },
         {
-            title: 'blog',
-            path: '/blog' 
+            title: 'write a blog',
+            path: '/Form' 
         },
         {
             title: 'Advices',

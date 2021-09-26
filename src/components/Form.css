@@ -24,11 +24,11 @@
     padding: 0 20px;
     margin-bottom: 15px;
     border-radius: 5px;
-    border: 1px solid #86b0b6;
+    border: 1px solid #01497c;
 }
 
 .form-box input:focus {
-    border: 1px solid #000000;
+    border: 1px solid #fca311;
     outline: 0;
 }
 
@@ -79,11 +79,19 @@
     padding: 15px 20px;
     margin-bottom: 10px;
     border-radius:  5px;
-    border: 1px solid #86b0b6;
+    border: 1px solid #01497c;
 }
 
 .form-box textarea:focus {
-    border: 1px solid #000000;
+    border: 1px solid #fca311;
     outline: 0;
 }
 
+@media screen and (max-width: 425px)  {
+    
+    .form-box {
+        width: 225px;
+        padding-right: 40px;
+    }
+
+}

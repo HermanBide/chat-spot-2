@@ -56,7 +56,7 @@ function App() {
       <Navbar />
 
         <Route exact path="/">
-        <header className="header">
+        {/* <header className="header">
 
           <div className="article-container">
           <h1>Read, Write, Blog.</h1>
@@ -75,13 +75,9 @@ function App() {
                 <button className="article-button">button</button>
                 <span></span>
               </div>
-              {/* <div className="Comment-list">
-                <p>comment list</p>
-              </div> */}
             </div>
-            
           </div>
-        </header>
+        </header> */}
 
         <section className="blog-section">
           <div className="blog-containers">
@@ -119,9 +115,19 @@ function App() {
 
 
 
-        <Route path="/CommentBox/:id">
+         <Route path="/CommentBox">
           <CommentBox  setToggleFetch={setToggleFetch}/>
         </Route>
+
+        <Route path="/Blog/:id/Comments">
+          <CommentBox  setToggleFetch={setToggleFetch}/>
+        </Route>
+
+        {/* <Route path="/blogPage/:id">
+          <BlogPage  setToggleFetch={setToggleFetch}/>
+        </Route>  */}
+     
+
 
 
 {/* 

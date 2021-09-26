@@ -129,7 +129,7 @@ height: 30px;
   grid-area: text;
 }
 
-.card-state {
+.card-stat {
   grid-area: stats;
 
 }
@@ -164,11 +164,14 @@ height: 30px;
 
 
   @media screen and (max-width: 425px) {
-  
+
+
   
     .navbar {
       align-items: center;
       flex-direction: column;
+      display: grid;
+      grid-column: 1fr;
     }
   
     .menu-container {
@@ -180,7 +183,6 @@ height: 30px;
       left: -300px;
       transition: 300ms ease left;
       flex-direction: column-reverse;
-  
       padding-left: 30px ;
   
     }
@@ -214,5 +216,17 @@ height: 30px;
     
     .menu-container {
       display: flex;
+    }
+
+
+    /* .header {
+      display: grid;
+      grid-column: 1fr;
+    } */
+
+    .blog-section {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      grid-template-rows: repeat(1, 1fr);
     }
   }

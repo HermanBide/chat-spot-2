@@ -1,5 +1,6 @@
 .container {
-    display: grid;
+    /* display: grid; */
+    
 }
 
 .card-text {
@@ -17,4 +18,50 @@
     border-color: #e5e5e5;
     color: #e5e5e5;
     background: #01497c;
+}
+
+.comment {
+    border: 1px solid #e5e5e5;
+    width: 99%;
+    border-radius: 10px;
+}
+
+.comment-stat {
+    border: 5px solid #01497c;
+    border-radius: 10px;
+    padding-left: 5px;
+}
+
+@media screen and (max-width: 768px) {
+
+    .remove-button {
+        height: 25px;
+        width: 15%;
+       margin: 0 auto;
+       display: flex;
+    }
+}
+
+
+@media screen and (max-width: 425px) {
+
+   .remove-button {
+       height: 25px;
+       width: 30%;
+      margin: 0 auto;
+      display: flex;
+   }
+
+   .comment-button {
+       display: flex;
+       
+   }
+
+   .comment-div {
+       display: grid;
+       
+     
+   }
+
+  
 }

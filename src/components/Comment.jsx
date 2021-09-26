@@ -34,7 +34,7 @@ function Comment(props) {
                  ...blog
                  this is my comment for the post 
              </p>
-                <div className="comment-stat">
+                <div className="comment-stats">
                     <ThumbUpIcon onClick={increment}>{count}:likes</ThumbUpIcon>
                     <ThumbDownAltIcon onClick={increment}>{count}:dislikes</ThumbDownAltIcon>
                 </div>
