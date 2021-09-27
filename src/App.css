@@ -60,10 +60,10 @@
     border-radius: 25%;
   } */
   
-  /* .like-form {
+  .like-form {
     width: 100px;
     height: 35px;
-  } */
+  }
   a:hover{
     cursor: pointer;
     color:var(--neutral);
@@ -155,9 +155,9 @@ height: 30px;
 
   /*FOOTER */
   /*FOOTER */
-  .footer {
+  /* .footer {
     background-color: rebeccapurple;
-  }
+  } */
   
 
 
@@ -238,5 +238,10 @@ height: 30px;
     .blog-containers {
       grid-template-columns:  1fr;
 
+    }
+    .like-form {
+      width: 100px;
+      padding-top: -100px;
+      height: 33px;
     }
   }

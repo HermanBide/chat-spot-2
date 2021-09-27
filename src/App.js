@@ -88,11 +88,11 @@ function App() {
           </div>
         </section>
 
-        <footer className="footer">
+        {/* <footer className="footer">
           <div>
             footer
           </div>
-        </footer>
+        </footer> */}
         </Route>
 
         <Route path="/Blog/:id">

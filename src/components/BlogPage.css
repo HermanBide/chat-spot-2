@@ -62,8 +62,11 @@
 
    .comment-div {
        display: grid;
-       
-     
+   }
+
+   .comment.box {
+       display: flex;
+       margin: 0 auto;
    }
 
   

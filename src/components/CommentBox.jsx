@@ -53,8 +53,9 @@ function CommentBox(props) {
     return (
         <div>
             <div className="comment-box">
+            <h2>Comment</h2>
                 <form action="" className="form" onSubmit={handleSubmit}>
-                <h2>Comment</h2>
+                {/* <h2>Comment</h2> */}
                         {/* <label for="message" className="comment-label">Comment</label>  */}
                         <input className="form-control" id="username" type="text" value={username} autoComplete="off"
                             placeholder="username"
