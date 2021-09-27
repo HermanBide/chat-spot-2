@@ -42,7 +42,7 @@ function Blog(props) {
           <h4>{username}</h4>
           <h2>{title}</h2>
           <p className="p">{detail}</p>
-          <button className="read-more">Read More</button>
+          {/* <button className="read-more">Read More</button> */}
         </div>
 
         <div className="card-stats">

@@ -46,8 +46,7 @@ function Navbar() {
         <div>
 
                
-                 <MenuIcon className="menu-icon" onClick={() => setMenuToggle(!menuToggle)}/>
-
+                <MenuIcon className="menu-icon" onClick={() => setMenuToggle(!menuToggle)}/>
             <nav className="navbar" style={{ display: menuActive || menuToggle ? "flex" : "none"}}>
                 {/* front and back arrows*/}
                 <span> my spot</span><br/>
