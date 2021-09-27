@@ -1,7 +1,8 @@
 import React from 'react'
 import './CommentBox.css'
 import axios from 'axios'
-import {  useState, useEffect } from 'react'
+// import { useEffect } from 'react'
+import {  useState} from 'react'
 import { useParams, useHistory } from "react-router-dom";
 import { baseURL, config } from "../services"
 
@@ -38,12 +39,12 @@ function CommentBox(props) {
         //   await axios.put(blogURL, { fields: newBlog }, config);
         // } else {
             // await axios.get(baseURL+"/blog/", { })
-          await axios.post(baseURL+"/Blog/:id/Comments", { fields: newComment }, config);
+          await axios.post(baseURL+"/Comments", { fields: newComment }, config);
         //   await axios.put(`/Blog/${id}`)
         // }
         // trigger our useEffect
         props.setToggleFetch((curr) => !curr);
-        history.push("/BlogPage")
+        history.push(`/Blog/${params.id}`)
       }
 
 
@@ -52,8 +53,8 @@ function CommentBox(props) {
     return (
         <div>
             <div className="comment-box">
+                <form action="" className="form" onSubmit={handleSubmit}>
                 <h2>Comment</h2>
-                <form action="" onSubmit={handleSubmit}>
                         {/* <label for="message" className="comment-label">Comment</label>  */}
                         <input className="form-control" id="username" type="text" value={username} autoComplete="off"
                             placeholder="username"

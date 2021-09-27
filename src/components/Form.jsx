@@ -52,7 +52,7 @@ function Form(props) {
         <div className="form-box">
         <h2>Write a blog.</h2>
           
-            <form action="" onSubmit={handleSubmit}>
+            <form action="" className="form-form" onSubmit={handleSubmit}>
 
                 {/* <img src="https://bestlifeonline.com/wp-content/uploads/sites/3/2019/04/sunset-boulevard-strip-hollywood-los-angeles-california.jpg?resize=500,335&quality=82&strip=all" alt="image" /> */}
 

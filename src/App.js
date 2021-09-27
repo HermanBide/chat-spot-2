@@ -9,6 +9,7 @@ import Blog from './components/Blog';
 import BlogPage from './components/BlogPage';
 import Advices from './components/Advices';
 import CommentBox from './components/CommentBox'
+import LikeButton from './components/LikeButton'
 
 
 
@@ -97,37 +98,37 @@ function App() {
         <Route path="/Blog/:id">
           <BlogPage blogs={blogs} setToggleFetch={setToggleFetch}/>
         </Route>
-
+        <Route path="/blogPage/:id">
+          <BlogPage  setToggleFetch={setToggleFetch}/>
+        </Route>  
+        
         <Route path="/Advices">
           <Advices />
         </Route>
 
-
-
         <Route path="/edit/:id">
           <Form  blogs={blogs} setToggleFetch={setToggleFetch}/>
         </Route>
-
         <Route path="/Form">
           <Form setToggleFetch={setToggleFetch}/>
         </Route>
 
-
-
-
          <Route path="/CommentBox">
           <CommentBox  setToggleFetch={setToggleFetch}/>
         </Route>
-
-        <Route path="/Blog/:id/Comments">
+        <Route path="/blog/:id/Comments">
           <CommentBox  setToggleFetch={setToggleFetch}/>
         </Route>
 
-        {/* <Route path="/blogPage/:id">
-          <BlogPage  setToggleFetch={setToggleFetch}/>
-        </Route>  */}
+    
      
 
+        <Route path="LikeButton" >
+            <LikeButton />
+        </Route>
+        <Route path="/blog/:id/likes" >
+            <LikeButton setToggleFetch={setToggleFetch}/>
+        </Route>
 
 
 {/* 

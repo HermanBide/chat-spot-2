@@ -47,15 +47,18 @@ function Blog(props) {
 
         <div className="card-stats">
             <div className="stat">
-                <ThumbUpIcon className="icon" onClick={increment} />
-                <h4>{count}</h4>
+
+              <button className="like-button" onClick={increment} >
+                <ThumbUpIcon className="icon"/>
+                <h5>{count} likes</h5>
+              </button>
             </div>
 
             <div className="stat">
-            <h4>Comment!</h4>
+            {/* <h4>Comment!</h4>
             <Link to={`/CommentBox/${props.blog.id}`}>
               <CommentIcon className="icon"/>
-            </Link>
+            </Link> */}
             </div>
 
             <div className="stat">

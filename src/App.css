@@ -60,7 +60,10 @@
     border-radius: 25%;
   } */
   
-  
+  /* .like-form {
+    width: 100px;
+    height: 35px;
+  } */
   a:hover{
     cursor: pointer;
     color:var(--neutral);
@@ -165,7 +168,9 @@ height: 30px;
 
   @media screen and (max-width: 425px) {
 
-
+    .App {
+      display: grid;
+    }
   
     .navbar {
       align-items: center;
@@ -228,5 +233,10 @@ height: 30px;
       display: grid;
       grid-template-columns: repeat(1, 1fr);
       grid-template-rows: repeat(1, 1fr);
+    }
+
+    .blog-containers {
+      grid-template-columns:  1fr;
+
     }
   }

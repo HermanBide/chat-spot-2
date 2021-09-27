@@ -19,22 +19,22 @@
 }
 
 .form-box input {
-    width: 100%;
+    width: 495px;
     height: 50px;
-    padding: 0 20px;
+    /* padding: 0 20px; */
     margin-bottom: 15px;
     border-radius: 5px;
     border: 1px solid #01497c;
 }
 
 .form-box input:focus {
-    border: 1px solid #fca311;
+    border: 2px solid #fca311;
     outline: 0;
 }
 
 
 .form-control {
-    background: #e5e5e5;
+    background: #ffffff;
     box-shadow: none;
     border-radius: 0;
     border-color: #01497c;
@@ -74,24 +74,47 @@
 }
 
 .form-box textarea {
-    width: 100%;
+    width: 495px;
     height: 150px;
-    padding: 15px 20px;
+    /* padding: 15px 20px; */
     margin-bottom: 10px;
     border-radius:  5px;
     border: 1px solid #01497c;
 }
 
 .form-box textarea:focus {
-    border: 1px solid #fca311;
+    border: 2px solid #fca311;
     outline: 0;
 }
 
+.form-form {
+    background: #ffffff;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    padding: 5px;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.9);
+}
+
 @media screen and (max-width: 425px)  {
-    
     .form-box {
-        width: 225px;
-        padding-right: 40px;
+        display: flex;
+        margin: 0 auto;
+    }
+    
+    .form-form {
+        width: 80vw;
+        /* padding-right: 40px; */
+    }
+
+    .form-box input {
+        width: 78vw;
+    }
+
+    .form-box textarea {
+        width: 78vw;
     }
 
 }
