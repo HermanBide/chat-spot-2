@@ -77,11 +77,12 @@ form {
 
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 360px) {
 
     .comment-box {
         display: flex;
         margin: 0 auto;
+        justify-content: center;
     }
 
     .form {

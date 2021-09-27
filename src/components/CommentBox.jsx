@@ -9,7 +9,7 @@ import { baseURL, config } from "../services"
 function CommentBox(props) {
 
 
-    const [ username, setUsername ] = useState("");
+    // const [ username, setUsername ] = useState("");
     const [ comment, setComment ] = useState("");
     const params = useParams();
     const history = useHistory();
@@ -29,7 +29,7 @@ function CommentBox(props) {
         e.preventDefault();
         // create a new object called newCharacter (holding all our data from state)
         const newComment = {
-            username,
+            // username,
             comment,
             blog : [params.id]
         }
@@ -53,16 +53,16 @@ function CommentBox(props) {
     return (
         <div>
             <div className="comment-box">
-            <h2>Comment</h2>
+            {/* <h2>Comment</h2> */}
                 <form action="" className="form" onSubmit={handleSubmit}>
-                {/* <h2>Comment</h2> */}
+                <h2>Comment</h2>
                         {/* <label for="message" className="comment-label">Comment</label>  */}
-                        <input className="form-control" id="username" type="text" value={username} autoComplete="off"
+                        {/* <input className="form-control" id="username" type="text" value={username} autoComplete="off"
                             placeholder="username"
                             required
                             tabIndex="1"
                             onChange={(e) => setUsername(e.target.value)}
-                            />
+                            /> */}
                         <textarea 
                             className="comment-control"  
                             id="text" 

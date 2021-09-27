@@ -98,10 +98,11 @@
     box-shadow: 5px 5px 10px rgba(0,0,0,0.9);
 }
 
-@media screen and (max-width: 425px)  {
+@media screen and (max-width: 360px)  {
     .form-box {
         display: flex;
         margin: 0 auto;
+        justify-content: center;
     }
     
     .form-form {
