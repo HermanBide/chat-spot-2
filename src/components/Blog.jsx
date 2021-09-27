@@ -1,30 +1,13 @@
 import { useState } from "react";
 import "./Blog.css";
-// import { baseURL, config } from "../services";
-import { Link } from "react-router-dom";
-// import axios from "axios";
 import ThumbUpIcon from "@mui/icons-material/ThumbUp";
-// import ThumbDownAltIcon from '@mui/icons-material/ThumbDownAlt'
 import CommentIcon from "@mui/icons-material/Comment";
-// import Comment from "./Comment";
+
 
 function Blog(props) {
   console.log(props);
   const [count, setCount] = useState(0);
-  // const params = useParams();
-
-  // const blog = props.blogs.find((blog) => blog.id === params._id)
-  // console.log(blog)
-  // console.log(params)
-
-  // if(!blog) {
-  //     return (
-  //         <h2>Loading...</h2>
-  //     )
-  // }
-
   const { username, title, detail, url, comments } = props.blog.fields;
-
 
   const increment = () => {
     setCount(count + 1);
