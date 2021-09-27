@@ -37,10 +37,10 @@ function Navbar() {
             title: 'write a blog',
             path: '/Form' 
         },
-        {
-            title: 'Advices',
-            path: '/Advices'
-        }
+        // {
+        //     title: 'Advices',
+        //     path: '/Advices'
+        // }
     ]
     return (
         <div>

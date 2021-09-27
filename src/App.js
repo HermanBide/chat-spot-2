@@ -7,7 +7,7 @@ import {  Link, Route } from 'react-router-dom'
 import Form from './components/Form';
 import Blog from './components/Blog';
 import BlogPage from './components/BlogPage';
-import Advices from './components/Advices';
+// import Advices from './components/Advices';
 import CommentBox from './components/CommentBox'
 import LikeButton from './components/LikeButton'
 
@@ -102,9 +102,9 @@ function App() {
           <BlogPage  setToggleFetch={setToggleFetch}/>
         </Route>  
         
-        <Route path="/Advices">
+        {/* <Route path="/Advices">
           <Advices />
-        </Route>
+        </Route> */}
 
         <Route path="/edit/:id">
           <Form  blogs={blogs} setToggleFetch={setToggleFetch}/>

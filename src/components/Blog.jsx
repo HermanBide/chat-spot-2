@@ -55,10 +55,6 @@ function Blog(props) {
             </div>
 
             <div className="stat">
-            {/* <h4>Comment!</h4>
-            <Link to={`/CommentBox/${props.blog.id}`}>
-              <CommentIcon className="icon"/>
-            </Link> */}
             </div>
 
             <div className="stat">
