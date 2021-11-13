@@ -4,7 +4,6 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 import { useParams, useHistory } from "react-router-dom";
 import { baseURL, config } from "../services"
-// import TextField from 'material-ui/TextField';
 
 function Form(props) {
 
@@ -27,12 +26,10 @@ function Form(props) {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        // create a new object called newCharacter (holding all our data from state)
         const newBlog = {
           username,
           title,
           detail,
-        
         }
         // make a POST request to our endpoint (same as GET), pass our newCharacter as the data, and pass our config to allow ourselves entry into the database
         // if (params.id) {
@@ -54,8 +51,6 @@ function Form(props) {
           
             <form action="" className="form-form" onSubmit={handleSubmit}>
             <h2>Write a blog.</h2>
-                {/* <img src="https://bestlifeonline.com/wp-content/uploads/sites/3/2019/04/sunset-boulevard-strip-hollywood-los-angeles-california.jpg?resize=500,335&quality=82&strip=all" alt="image" /> */}
-
                 <input className="form-control" id="username" type="text" value={username} autoComplete="off"
                 placeholder="username"
                 required

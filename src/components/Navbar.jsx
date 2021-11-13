@@ -1,8 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react'
-// import { SearchIcon } from '@mui/icons-material/Search';
-// import {IoIosApps} from 'react-icons/fa'
 import MenuIcon from '@mui/icons-material/Menu';
 
 
@@ -16,7 +14,7 @@ function Navbar() {
         const handleResize = () => {
             if(window.innerWidth > 425) {
                 setMenuActive(true);
-                setMenuToggle(false)
+                setMenuToggle(true)
             } else {
                 setMenuActive(false)
             }
@@ -48,7 +46,6 @@ function Navbar() {
                
                 <MenuIcon className="menu-icon" onClick={() => setMenuToggle(!menuToggle)}/>
             <nav className="navbar" style={{ display: menuActive || menuToggle ? "flex" : "none"}}>
-                {/* front and back arrows*/}
                 <span> my spot</span><br/>
 
                 <div className={`menu-container {${menuActive} && 'active}`}> 
@@ -60,10 +57,6 @@ function Navbar() {
                         ))}
                     </ul>
                 </div>
-
-              
-               
-
             </nav>            
         </div>
     )

@@ -20,8 +20,7 @@ function App() {
     const [ toggleFetch, setToggleFetch ] = useState(false);
     const [ blogs, setBlogs ] = useState([])
     // const [articles, setArticles ] = useState([]);
-    // const [term, setterm ] = useState("everything");
-    //  const [isLoading, setIsLoading ] = useState(true);
+
     
     useEffect(() => {
           
@@ -55,31 +54,7 @@ function App() {
     return (
       <div className="App">
       <Navbar />
-
         <Route exact path="/">
-        {/* <header className="header">
-
-          <div className="article-container">
-          <h1>Read, Write, Blog.</h1>
-          <p>Articles & blogs to read. Share your experience and passiosn with the world.Like or comment on something you read.</p>
-
-            <div className="article-card">
-              <div className="card-image">
-              </div>
-              <div className="card-text">
-                <h3>username</h3>
-                <h1>title</h1>
-                <p>Detail</p>
-              </div>
-              <div className="card-stats">
-                <h4>like button</h4>
-                <button className="article-button">button</button>
-                <span></span>
-              </div>
-            </div>
-          </div>
-        </header> */}
-
         <section className="blog-section">
           <div className="blog-containers">
           { blogs.map((blog) => (
@@ -87,12 +62,6 @@ function App() {
           ))} 
           </div>
         </section>
-
-        {/* <footer className="footer">
-          <div>
-            footer
-          </div>
-        </footer> */}
         </Route>
 
         <Route path="/Blog/:id">
@@ -120,22 +89,12 @@ function App() {
           <CommentBox  setToggleFetch={setToggleFetch}/>
         </Route>
 
-    
-     
-
         <Route path="LikeButton" >
             <LikeButton />
         </Route>
         <Route path="/blog/:id/likes" >
             <LikeButton setToggleFetch={setToggleFetch}/>
-        </Route>
-
-
-{/* 
-        <Route path={`/Blog/${blog.id}`}>
-        <Link to={`/Blog/${blog.id}`}><Comment setToggleFetch={setToggleFetch}/></Link>
-        </Route> */}
-  
+        </Route> 
     </div>
      );
 }

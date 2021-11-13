@@ -14,20 +14,8 @@ function CommentBox(props) {
     const params = useParams();
     const history = useHistory();
 
-    //when you want to edit the comment//
-    // useEffect(() => {
-    //     if(params.id) {
-    //         const comments = props.comments.find((comment) => comment.id === params.id);
-    //         if(comment) {
-    //             setComment(comments.field.comments)
-    //             setUsername(comments.field.username)
-    //         }
-    //     }
-    // },[params.id, props.blogs])
-
     const handleSubmit = async (e) => {
         e.preventDefault();
-        // create a new object called newCharacter (holding all our data from state)
         const newComment = {
             // username,
             comment,
