@@ -1,0 +1,17 @@
+.root {
+  --clr-primary: #ffffff;
+  --primary: #e5e5e5;
+  --primary-two: #000000;
+  --secondary: #01497c;
+  --neutral: #fca311;
+  }
+
+  @import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@100;200;300;400;500;600;700&display=swap');
+  
+/* font-family: 'Urbanist', sans-serif; */
+
+/* light
+regular
+semibold
+bold
+extrabold */

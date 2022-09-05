@@ -1,0 +1,57 @@
+.signup {
+    height: calc(100vh - 50px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(rgba(56, 55, 55, 0.5), rgba(255, 255, 255, 0.5)), url("https://cdn.solace.com/wp-content/uploads/2019/01/bg-desktop-blog.jpg");
+    background-size: cover;
+}
+
+.signupTitle {
+    font-size: 50px;
+
+}
+
+.signupForm {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.signupForm > label {
+    margin: 10px 0;
+    font-weight: 800;
+    color: white;
+}
+
+.signupInput {
+    padding: 10px;
+    background-color: white;
+    border: none;
+    border-radius: 20px;
+}
+
+.signupButton {
+    margin-top: 20px;
+    cursor: pointer;
+    background-color: lightcoral;
+    border: none;
+    color: white;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 2px 2px 1px 1px rgb(32, 32, 32);
+}
+
+.loginButton {
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background-color: teal;
+    cursor: pointer;
+    border: none;
+    padding: 16px;
+    cursor: pointer;
+    border-radius: 10px;
+    box-shadow: 2px 2px 1px 1px rgb(32, 32, 32);
+}
