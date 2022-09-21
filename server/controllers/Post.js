@@ -1,10 +1,30 @@
 const Post = require("../models/Post")
 
+const createPost = async (req, res) => {
+    try {
+        const newPost = new Post(req.body);
+        await newPost.save()
+        res.status(201).json(newPost)
+    } catch (error) {
+        return res.status(500).json("did not create post", {error: error.message})
+    }
+}
 //GET ALL POST
 
 const getPosts = async (req, res) => {
+    const username = req.query.user;
+    const catName = req.query.cat;
     try {
-        const posts = await Post.find()
+        let posts;
+        if(username){
+            posts = await Post.find({username})
+        } else if(catName) {
+            posts = await Post.find({categories: {
+                $in:[catName]
+            }})
+        } else {
+            posts = await Post.find()
+        }
         res.status(200).json(posts)
     } catch (error) {
         res.status(500).json("Could not find posts", {error: error.message})
@@ -19,20 +39,10 @@ const getPostById = async (req, res) => {
         if(post) {
             return res.status(200).json(post)
         } else if (!post) {
-            return  res.status(404).json({ error: " post not found"})
+            return  res.status(404).json({ error: " post by this ID not found"})
         }
     } catch (error) {
         res.status(500).json({error: error.message})
-    }
-}
-
-const createPost = async (req, res) => {
-    try {
-        const newPost = new Post(req, res);
-        await newPost.save()
-        res.status(201).json(newPost)
-    } catch (error) {
-        res.status(500).json("did not create post", {error: error.message})
     }
 }
 

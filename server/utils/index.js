@@ -27,7 +27,7 @@ const restrictAccess = async (req, res, next) => {
         const token = req.headers.authorization.split(" ")[1];
         const { username } = verify(token, SECRET)
         if (username){
-            //deconstruct and find user info
+            //destructure and find user info
             const [user] = await User.find({ username });
             res.locals.user = user;
             next(); 
@@ -43,6 +43,6 @@ module.exports = {
     createToken,
     createUserInfo,
     comparePasswords,
-    restrictAccess,
+    // restrictAccess,
     hashPassword
 }

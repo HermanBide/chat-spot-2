@@ -1,15 +1,15 @@
+const postController = require("../controllers/Post")
 const { Router } = require("express");
-const postController = require("../controllers/Post");
-
-const { restrictAccess } = require("../utils");
 
 
-const postRouter = Router();
+const postRouter = new Router();
 
-postRouter.get("/posts", postController.getPosts);
-postRouter.get("/post/:id", restrictAccess, postController.getPostById);
-postRouter.post("/new=post", restrictAccess, postController.createPost);
-postRouter.put("/update=post/:id", restrictAccess, postController.updatePost);
-postRouter.delete("/post/:id", restrictAccess, postController.deletePost);
+postRouter.post('/posts', postController.createPost)
+postRouter.get('/', postController.getPosts)
+postRouter.get('/posts/:id', postController.getPostById)
+postRouter.put('/posts/:id', postController.updatePost)
+postRouter.delete('/posts/:id', postController.deletePost)
+
 
 module.exports = postRouter;
+
