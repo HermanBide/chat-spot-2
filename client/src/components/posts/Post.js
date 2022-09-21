@@ -1,35 +1,32 @@
 import React from "react";
 import "./Post.css";
+import { Link } from "react-router-dom"
 
-const Post = () => {
+const Post = ({ post }) => {
   return (
     <div className="post">
-      <a href="https://medium.com/@makesh-kumar/typescript-type-declaration-aka-d-ts-file-6c5c02dbc05f">
-        <img
-          className="postImg"
-          src="https://iili.io/6MzZt2.md.jpg"
-          alt="6MzZt2.md.jpg"
-          border="0"
-        />
-      </a>
+      {post.photo && (
+        <img className="postImg" src={post.photo} alt="6MzZt2.md.jpg" />
+      )}
+
       <div className="postInfo">
         <div className="postCats">
-          <span className="postCat">Tech</span>
-          <span className="postCat">Life</span>
+          <span className="postCat">
+            {post.categories.map((cat, i) => (
+              
+              <span className="postCat" key={i}>{cat.name}</span>
+            ))}
+          </span>
         </div>
-        <span className="postTitle">
-          {" "}
-          Typescript — Type declaration aka d.ts file
-        </span>
+        <Link to={`/posts/${post._id}`} className="link" style={{ textDecoration: "none", color: "inherit" }}>
+        <span className="postTitle" > {post.title}</span>
+        </Link>
         <hr />
-        <span className="postDate">Sep 4</span>
+        <span className="postDate">
+          {new Date(post.createdAt).toDateString()}
+        </span>
       </div>
-      <p className="postDesc">
-        What are type declaration files? Type declaration files are the files
-        with d.ts extension, where types were declared via interface or type.
-        These declaration files have no implementations. They only contain type
-        information and have a .d.ts file extension.
-      </p>
+      <p className="postDesc">{post.description}</p>
     </div>
   );
 };

@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios"
 import "./Sidebar.css";
 import {
   FaPinterest,
@@ -6,8 +7,18 @@ import {
   FaTwitterSquare,
   FaFacebookSquare,
 } from "react-icons/fa";
+import { Link } from "react-router-dom"
 
 const Sidebar = () => {
+  const [cats, setCats] = useState([])
+
+  useEffect(() => {
+    const getCats = async () => {
+      const res = await axios.get("/cat")
+      setCats(res.data)
+    }
+    getCats()
+  },[])
   return (
     <div className="sidebar">
       <div className="sidebarItem">
@@ -18,14 +29,12 @@ const Sidebar = () => {
       <div className="sidebarItem">
         <span className="sidebarTitle">CATEGORIES</span>
         <ul className="sidebarList">
-          <li className="sidebarListItem">Tech</li>
-          <li className="sidebarListItem">Events</li>
-          <li className="sidebarListItem">Music</li>
-          <li className="sidebarListItem">Sport</li>
-          <li className="sidebarListItem">Cinema</li>
-          <li className="sidebarListItem">Life</li>
-          <li className="sidebarListItem">Health</li>
-          <li className="sidebarListItem">Finance</li>
+        {cats.map(cat => (
+          <Link to={`/?cat=${cat.name}`} style={{ textDeoration: "none", color:"inherit"}}>
+
+          <li className="sidebarListItem">{cat.name}</li>
+          </Link>
+        ))}
         </ul>
       </div>
 

@@ -7,8 +7,8 @@ import SinglePost from './SinglePost'
 const Single = () => {
   return (
     <div className='single'>
-        <Sidebar/>
         <SinglePost />
+        <Sidebar/>
     </div>
   )
 }

@@ -1,21 +1,38 @@
-import React from "react";
-import "./Single.css";
+import React, { useEffect, useState } from "react";
+import "./SinglePost.css";
 import { FaEdit } from "react-icons/fa";
 import { RiDeleteBin6Fill } from "react-icons/ri";
+import { useLocation } from "react-router-dom";
+import axios from "axios"
+import { Link } from "react-router-dom"
 
 const SinglePost = () => {
+  const location = useLocation()
+  const path = location.pathname.split("/")[2] 
+  const [post, setPost] = useState({})
+
+  useEffect(() => {
+    const getPost = async () => {
+      const res = await axios.get("/posts/posts/" + path)
+      setPost(res.data)
+    };
+    getPost()
+  }, [path]);
+
+
   return (
     <div className="singlePost">
       <div className="singlePostWrapper">
-        <a href="https://medium.com/@makesh-kumar/typescript-type-declaration-aka-d-ts-file-6c5c02dbc05f">
+        { post.pgoto && 
           <img
             className="singlePostImg"
-            src="https://iili.io/6MzZt2.md.jpg"
+            src={post.photo}
             alt="6MzZt2.md.jpg"
             border="0"
           />
-        </a>
+        }
         <h1 className="singlePostTitle">
+        {post.title}
           <div className="singlePostEdit">
             <FaEdit className="singlePostIcon" />
             <RiDeleteBin6Fill className="singlePostIcon" />
@@ -23,26 +40,16 @@ const SinglePost = () => {
         </h1>
         <div className="singlePostInfo">
           <span className="singlePostAuthor">
-            Author: <b>Makesh Kumar</b>
+            Author:
+            <Link to={`/?user=${post.username}`} className="link" style={{ textDeoration: "none", color:"inherit"}}>
+             <b>{post.username}</b>
+            </Link>
           </span>
-          <span className="singlePostDate">1 day ago</span>
+          <br/>
+          <span className="singlePostDate">{new Date(post.createdAt).toDateString()}</span>
         </div>
-        <p>
-          If you have used typescript means, then you might have seen the beauty
-          and the magic it does. The core part of typescript is to provide type
-          support to javascript features, But how does typescript know these
-          types, how does it knows the methods that are available on a
-          particular class, object Let’s consider the below code snippet.
-          <br />
-          Type definitions for external libraries What if we are installing some
-          third-party libraries (npm packages), how will typescript know the
-          types of the methods/modules or whatever in that library? There are
-          certain ways that help typescript in this case.
-          <br />
-          Custom declaration file What if both of the above ways are not
-          feasible, neither the type declaration is bundled with the library nor
-          the same is not available in the DefinitelyTyped repository? In this
-          case, typescript will complain about missing type declaration file
+        <p className="singlePostDesc">
+          {post.description}
         </p>
       </div>
     </div>
